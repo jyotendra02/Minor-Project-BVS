@@ -1,10 +1,10 @@
 import React from 'react';
-import VotingSystem from './components/VotingSystem.js';
+import Voting from "./components/voting"
 
 function App() {
   return (
     <div className="App">
-      <VotingSystem />
+      <Voting></Voting>
     </div>
   );
 }
