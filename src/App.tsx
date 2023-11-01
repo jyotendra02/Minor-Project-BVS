@@ -1,10 +1,15 @@
 import React from 'react';
-import VotingSystem from './components/VotingSystem.js';
+import Voter from './components/Voter.js';
+import Navbar from './components/Navbar.js';
+
 
 function App() {
   return (
     <div className="App">
-      <VotingSystem />
+      <Voter onVote={function (candidateName: string): void {
+        throw new Error('Function not implemented.');
+      } } />
+      <Navbar/>
     </div>
   );
 }
