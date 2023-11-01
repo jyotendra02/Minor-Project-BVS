@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import './App.css'; // Import the CSS file
 
-const Voter = ({ onVote }) => {
-  const candidates = ["Candidate 1", "Candidate 2", "Candidate 3", "Candidate 4"];
-  const [selectedCandidate, setSelectedCandidate] = useState(null);
-  const [votedCandidate, setVotedCandidate] = useState(null);
+type VoterProps = {
+  onVote: (candidateName: string) => void;
+};
 
-  const handleVoting = (candidateIndex) => {
+const Voter: React.FC<VoterProps> = ({ onVote }) => {
+  const candidates = ["Candidate 1", "Candidate 2", "Candidate 3", "Candidate 4"];
+  const [selectedCandidate, setSelectedCandidate] = useState<number | null>(null);
+  const [votedCandidate, setVotedCandidate] = useState<string | null>(null);
+
+  const handleVoting = (candidateIndex: number) => {
     setSelectedCandidate(candidateIndex);
   };
 
