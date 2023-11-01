@@ -6,9 +6,7 @@ import Navbar from './components/Navbar.js';
 function App() {
   return (
     <div className="App">
-      <Voter onVote={function (candidateName: string): void {
-        throw new Error('Function not implemented.');
-      } } />
+      <Voter/>
       <Navbar/>
     </div>
   );

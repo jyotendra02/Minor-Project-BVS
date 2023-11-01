@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import '../css/VotingSystem.css'
 import { submitVoteOperation } from '../utils/operation';
 import { resetVotesOperation } from '../utils/operation';
-type VoterProps = {
-  onVote: (candidateName: string) => void;
-};
 
-const Voter: React.FC<VoterProps> = ({ onVote }) => {
+
+const Voter: React.FC = () => {
   const candidates = ["Candidate 1", "Candidate 2", "Candidate 3", "Candidate 4"];
   const [selectedCandidate, setSelectedCandidate] = useState<number | null>(null);
   const [votedCandidate, setVotedCandidate] = useState<string | null>(null);
@@ -22,7 +20,7 @@ const Voter: React.FC<VoterProps> = ({ onVote }) => {
         const candidateIndex = selectedCandidate;
         
         setVotedCandidate(candidateName);
-        onVote(candidateName); // Pass the selected candidate name to the parent
+      
         console.log(candidateIndex)
         await submitVoteOperation(candidateIndex);
       } else {
@@ -30,7 +28,8 @@ const Voter: React.FC<VoterProps> = ({ onVote }) => {
       }
       
     } catch (error) {
-      alert(error)
+      console.error(error);
+ 
     }
   
   };
@@ -70,4 +69,4 @@ const Voter: React.FC<VoterProps> = ({ onVote }) => {
   );
 };
 
-export default Voter;
+export default Voter;
