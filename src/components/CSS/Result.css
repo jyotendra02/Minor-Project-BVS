@@ -1,0 +1,61 @@
+/* Result.css */
+.result-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 20px auto; /* Add margin from the top */
+    text-align: center; /* Center the content horizontally */
+  }
+  
+  .result-heading {
+    font-size: 24px;
+    color: #0074d9; /* Change the color of the heading */
+    font-family: "Arial", sans-serif; /* Change the font for the heading */
+  }
+  
+  .result-candidate-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .result-candidate-item {
+    margin: 10px 0;
+    background-color: #e9e9e9; /* Add background color to candidates */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex; /* Display voted label and candidate name side by side */
+     /* Center align voted label and candidate name */
+    /* Center the content horizontally */
+  }
+  
+  .result-candidate-name {
+    font-size: 18px;
+    color: #4caf50; /* Change the color of candidate names */
+    font-family: "Helvetica", sans-serif; /* Change the font for candidate names */
+  }
+  
+  .result-candidate-votes {
+    font-size: 16px;
+    color: #0074d9;
+    margin-left: 10px; /* Add margin between voted label and vote count */
+  }
+  
+  .result-candidate-voted {
+    font-size: 16px;
+    color: #28a745; /* Add color for "Voted" label */
+    margin-left: 10px; /* Add margin between "Voted" label and candidate name */
+  }
+  .voter-endgame-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .voter-endgame-button:hover {
+    background-color: #c83d25;
+  }

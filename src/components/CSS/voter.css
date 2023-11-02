@@ -1,0 +1,67 @@
+/* voter.css */
+
+/* Container style */
+.voter-container {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  max-width: 400px;
+  margin: 100px auto;
+}
+
+/* Heading style */
+.voter-heading {
+  font-size: 24px;
+  color: #333;
+}
+
+/* List of candidates style */
+.voter-candidate-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Candidate item style */
+.voter-candidate-item {
+  margin: 10px 0;
+}
+
+/* Candidate button style */
+.voter-candidate-button {
+  background-color: #0074d9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.voter-candidate-button:hover {
+  background-color: #0056b3;
+}
+
+/* Submit button style */
+.voter-submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.voter-submit-button:hover {
+  background-color: #218838;
+}
+
+/* Voted message style */
+.voter-voted-message {
+  font-size: 18px;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Endgame button style */
+

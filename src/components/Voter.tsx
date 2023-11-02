@@ -1,58 +1,52 @@
-import React, { useState } from 'react';
-import '../css/VotingSystem.css'
-import { submitVoteOperation } from '../utils/operation';
-import { resetVotesOperation } from '../utils/operation';
-
-
+import React, { useState } from "react";
+import './CSS/voter.css'; // Import the CSS file
+import { resetVotesOperation , submitVoteOperation } from "../utils/operation";
 const Voter: React.FC = () => {
-  const candidates = ["Candidate 1", "Candidate 2", "Candidate 3", "Candidate 4"];
-  const [selectedCandidate, setSelectedCandidate] = useState<number | null>(null);
+  const candidates = [
+    "Candidate 1",
+    "Candidate 2",
+    "Candidate 3",
+    "Candidate 4",
+  ];
+  const [selectedCandidate, setSelectedCandidate] = useState<number | null>(
+    null
+  );
   const [votedCandidate, setVotedCandidate] = useState<string | null>(null);
 
   const handleVoting = (candidateIndex: number) => {
     setSelectedCandidate(candidateIndex);
   };
 
-  const handleSubmit = async() => {
+  const handleSubmit = async () => {
     try {
       if (selectedCandidate !== null) {
         const candidateName = candidates[selectedCandidate];
         const candidateIndex = selectedCandidate;
-        
+
         setVotedCandidate(candidateName);
-      
-        console.log(candidateIndex)
+
+        console.log(candidateIndex);
+
+        // You can perform the submitVoteOperation here
         await submitVoteOperation(candidateIndex);
       } else {
-        alert('Please select a candidate before submitting.');
+        alert("Please select a candidate before submitting.");
       }
-      
     } catch (error) {
       console.error(error);
- 
     }
-  
   };
-  const handleClick = async ()=> {
-    try {
-      await resetVotesOperation();
-      
-    } catch (error) {
-      console.log(error)
-      
-    }
-    
 
-  }
+  
 
   return (
-    <div className="container2">
-      <h1>Choose a Candidate</h1>
-      <ul className="candidate-list">
+    <div className="voter-container">
+      <h1 className="voter-heading">Choose a Candidate</h1>
+      <ul className="voter-candidate-list">
         {candidates.map((candidate, index) => (
-          <li className="candidate-item" key={index}>
+          <li className="voter-candidate-item" key={index}>
             <button
-              className="candidate-button"
+              className="voter-candidate-button"
               onClick={() => handleVoting(index)}
             >
               {candidate}
@@ -60,11 +54,13 @@ const Voter: React.FC = () => {
           </li>
         ))}
       </ul>
-      <button className="submit-button" onClick={handleSubmit}>Submit</button>
+      <button className="voter-submit-button" onClick={handleSubmit}>
+        Submit
+      </button>
       {votedCandidate !== null && (
-        <p className="voted-message">Thanks for voting for {votedCandidate}!</p>
+        <p className="voter-voted-message">Thanks for voting for {votedCandidate}!</p>
       )}
-      <button onClick={handleClick}>Endgame</button>
+      
     </div>
   );
 };
